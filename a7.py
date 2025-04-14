@@ -233,20 +233,20 @@ class BayesClassifier:
         """
         tokens = []
         token = ""
-        for c in text:
+        for i in text:
             if (
-                re.match("[a-zA-Z0-9]", str(c)) != None
-                or c == "'"
-                or c == "_"
-                or c == "-"
+                re.match("[a-zA-Z0-9]", str(i)) != None
+                or i == "'"
+                or i == "_"
+                or i == "-"
             ):
-                token += c
+                token += i
             else:
                 if token != "":
                     tokens.append(token.lower())
                     token = ""
-                if c.strip() != "":
-                    tokens.append(str(c.strip()))
+                if i.strip() != "":
+                    tokens.append(str(i.strip()))
 
         if token != "":
             tokens.append(token.lower())
@@ -315,6 +315,7 @@ if __name__ == "__main__":
     print(f"P('terrible'| neg) {(b.neg_freqs['terrible']+1)/neg_denominator}")
 
     # uncomment the below lines once you've implemented `classify`
+    
     print("\nThe following should all be positive.")
     print(b.classify('I love computer science'))
     print(b.classify('this movie is fantastic'))
