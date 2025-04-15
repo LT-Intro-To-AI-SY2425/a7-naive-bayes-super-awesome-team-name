@@ -308,6 +308,14 @@ class BayesClassifier:
         plt.title("Netflix", fontsize=30, color="white", weight="bold", pad=20)
         plt.show()
 
+    def interactive_classification(self):
+        print("Type 'exit' to quit.")
+        while True:
+            review = input("Enter your review: ")
+            if review.lower() == "exit":
+                break
+            print(f"You typed: {review}")
+
 if __name__ == "__main__":
     # uncomment the below lines once you've implemented `train` & `classify`
     b = BayesClassifier()
@@ -361,4 +369,5 @@ if __name__ == "__main__":
     
     print(b.classify("No way should this have beaten Traffic for best movie."))
     b.generate_netflix_logo()
+    b.interactive_classification()
     pass
