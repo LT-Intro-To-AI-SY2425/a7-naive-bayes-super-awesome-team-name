@@ -1,6 +1,7 @@
 import math, os, pickle, re
 from typing import Tuple, List, Dict
-
+import matplotlib.pyplot as plt
+import numpy as np
 
 class BayesClassifier:
     """A simple BayesClassifier implementation
@@ -272,14 +273,39 @@ class BayesClassifier:
             else:
                 freqs[word] = 1
 
-    def interactive_classification(self):
+    def your_user_review(self):
         print("\nType a movie review below to classify it (type 'exit' to quit):")
         while True:
-            user_input = input("Your review: ")
+            user_input = input("Enter your review: ")
             if user_input.lower() == "exit":
                 break
             classification = b.classify(user_input)
             print(f"→ The review is classified as: **{classification.upper()}**\n")
+
+    def generate_netflix_logo_for_fun(self):
+
+        fig, ax = plt.subplots(figsize=(6, 6))
+        ax.set_facecolor('black')
+        fig.patch.set_facecolor('black')
+        ax.axis('off')
+
+    # Create the red bars that form the stylized 'N'
+        bar_width = 0.2
+
+    # Left red bar
+        ax.add_patch(plt.Rectangle((0.2, 0.2), bar_width, 0.6, color="#E50914"))
+
+    # Right red bar
+        ax.add_patch(plt.Rectangle((0.6, 0.2), bar_width, 0.6, color="#E50914"))
+
+    # Diagonal red bar (the middle slant of the N)
+        x = np.array([0.2, 0.4, 0.6])
+        y = np.array([0.8, 0.2, 0.8])
+        ax.plot(x, y, color="#E50914", linewidth=30, solid_capstyle='butt')
+
+        plt.title("Netflix", fontsize=30, color="white", weight="bold", pad=20)
+        plt.show()
+
 
 if __name__ == "__main__":
     # uncomment the below lines once you've implemented `train` & `classify`
@@ -334,5 +360,6 @@ if __name__ == "__main__":
     print()
     
     print(b.classify("No way should this have beaten Traffic for best movie."))
-    b.interactive_classification()
+    b.your_user_review()
+    b.generate_netflix_logo_for_fun()
     pass
