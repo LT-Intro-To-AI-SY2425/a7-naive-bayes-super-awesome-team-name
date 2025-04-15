@@ -272,6 +272,15 @@ class BayesClassifier:
             else:
                 freqs[word] = 1
 
+    def interactive_classification(self):
+        print("\nType a movie review below to classify it (type 'exit' to quit):")
+        while True:
+            user_input = input("Your review: ")
+            if user_input.lower() == "exit":
+                break
+            classification = b.classify(user_input)
+            print(f"→ The review is classified as: **{classification.upper()}**\n")
+
 if __name__ == "__main__":
     # uncomment the below lines once you've implemented `train` & `classify`
     b = BayesClassifier()
@@ -325,4 +334,5 @@ if __name__ == "__main__":
     print()
     
     print(b.classify("No way should this have beaten Traffic for best movie."))
+    b.interactive_classification()
     pass
