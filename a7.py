@@ -174,7 +174,6 @@ class BayesClassifier:
         # of 0)
         for token in tokens:
             if token not in stopwords:
-
                 pos_freqs = self.pos_freqs.get(token, 0) + 1
                 neg_freqs = self.neg_freqs.get(token, 0) + 1
 
@@ -189,6 +188,9 @@ class BayesClassifier:
         # for debugging purposes, it may help to print the overall positive and negative
         # probabilities
         # print(pos_score, neg_score)
+
+        print(f"Positive Probability: {pos_score}")
+        print(f"Negative Probability: {neg_score}")
 
         # determine whether positive or negative was more probable (i.e. which one was
         # larger)
@@ -367,9 +369,14 @@ if __name__ == "__main__":
     print(b.classify('this movie is fantastic'))
     print("\nThe following should all be negative.")
     print(b.classify('rainy days are the worst'))
-    print(b.classify('computer science is terrible'))
-    print()
-    
+    print(b.classify('computer science is terrible')) 
     print(b.classify("No way should this have beaten Traffic for best movie."))
+
+    print()
+
+    print("\nTHE FOLLOWING IS TO TEST OUT THE METHOD WITH EACH GROUPS RESPONCSES")
+    print(b.classify('Summer break is almost here.  I am super excited and I know that its going to be the best'))
+    print(b.classify('This was crazy incredible. Absolutely stunning cast.'))
+    print(b.classify('I cant believe how amazing this movie is! Definitely a top 10.'))
     b.interactive_classification()
     pass
