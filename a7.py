@@ -316,6 +316,8 @@ class BayesClassifier:
             if review.lower() == "exit":
                 break
             print(f"You typed: {review}")
+            prediction = self.classify(review)
+            print(f"Prediction: {prediction}")
 
 if __name__ == "__main__":
     # uncomment the below lines once you've implemented `train` & `classify`
@@ -370,5 +372,4 @@ if __name__ == "__main__":
     
     print(b.classify("No way should this have beaten Traffic for best movie."))
     b.interactive_classification()
-    b.generate_netflix_logo()
     pass
