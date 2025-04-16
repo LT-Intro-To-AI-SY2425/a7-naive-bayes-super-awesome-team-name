@@ -1,3 +1,4 @@
+## Nathan Chen
 import math, os, pickle, re
 from typing import Tuple, List, Dict
 import matplotlib.pyplot as plt
@@ -368,6 +369,6 @@ if __name__ == "__main__":
     print()
     
     print(b.classify("No way should this have beaten Traffic for best movie."))
-    b.generate_netflix_logo()
     b.interactive_classification()
+    b.generate_netflix_logo()
     pass
