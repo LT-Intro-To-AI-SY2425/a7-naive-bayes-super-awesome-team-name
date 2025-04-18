@@ -378,5 +378,12 @@ if __name__ == "__main__":
     print(b.classify('Summer break is almost here.  I am super excited and I know that its going to be the best'))
     print(b.classify('This was crazy incredible. Absolutely stunning cast.'))
     print(b.classify('I cant believe how amazing this movie is! Definitely a top 10.'))
+    print(b.classify('I am nervous that I wont do well on the AP tests.  I have studied, but I dont think Ill do that well'))
+    print(b.classify('I hate this stupid math class.'))
+    print(b.classify('I failed the AP test. It was a very bad day.'))
+    print(b.classify('THE RATING SAYS ENOUGH'))
+    print(b.classify('Most war movies are just terrible, nihilistic, and dark. This one is no exception to that unfortunate rule.'))
+    print(b.classify('Forget Schindlers List: This is MUCH better! Best film of 98! Best non-English film ever! :o) PS: Do anyone know why La vita bella wasnt nominated for one single Golden Globe, when it was nominated for seven Oscars won three?!?'))
+    print(b.classify('The movie was worth seeing, not just because Halle was wearing a skin tight outfit but because it has a good storyline and is quites comical. It also gives an interesting twist to the actual story of how catwoman came about.'))
     b.interactive_classification()
     pass
